@@ -11,7 +11,9 @@ body {
 
 
 .header-image {
-  position: absolute;
+ display: flex;
+  align-items: center;
+  justify-content: center;
     width: 80%;
     max-width: 500px;
   top: 15%;
