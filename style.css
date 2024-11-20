@@ -9,53 +9,64 @@ body {
   background: linear-gradient(-90deg, #0D2501, #0D2501);
 }
 
-
+/* ส่วนของ Header */
 .header-image {
- display: flex;
-  align-items: center;
-  justify-content: center;
-    width: 80%;
-    max-width: 500px;
+  position: absolute;
+  width: 80%;
+  max-width: 500px;
   top: 15%;
-  left: 50%; /* เพิ่ม */
+  left: 50%;
   transform: translate(-50%, 0);
-
 }
+
+/* กล่องหลัก */
 .wrapper {
   width: 90%;
   max-width: 34.37em;
-  max-height: auto;
+  height: auto;
   background-color: #812719;
   position: absolute;
   transform: translate(-50%, -50%);
   top: 60%;
   left: 50%;
-  padding: 2em;
+  padding: 3em;
   border-radius: 1em;
   box-shadow: 0 4em 5em rgba(27, 8, 53, 0.2);
 }
+
+/* คอนเทนเนอร์สำหรับวงล้อ */
 .container {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  height: 100%;
 }
+
+/* วงล้อ */
 #wheel {
-  width: 100%; /* ปรับขนาดตาม container */
-  max-width: 300px; /* จำกัดขนาดสูงสุด */
-  height: auto; /* ให้ปรับตามความกว้าง */
+  max-height: inherit;
+  width: 100%; /* ปรับให้เต็ม container */
+  max-width: 300px; /* กำหนดขนาดสูงสุด */
+  height: auto;
+  padding: 0;
 }
+
+/* แอนิเมชันหมุน */
 @keyframes rotate {
   100% {
     transform: rotate(360deg);
   }
 }
+
+/* ปุ่มหมุน */
 #spin-btn {
   position: absolute;
   transform: translate(-50%, -50%);
   top: 50%;
   left: 50%;
   height: 20%;
-  width: 26%;
+  width: 20%;
   border-radius: 50%;
   cursor: pointer;
   border: 0;
@@ -66,13 +77,16 @@ body {
   letter-spacing: 0.1em;
   font-weight: 600;
 }
+
+/* ไอคอนหรือภาพ */
 img {
   position: absolute;
   width: 4em;
   top: 50%;
   right: -10%;
- 
 }
+
+/* ข้อความผลลัพธ์ */
 #final-value {
   font-size: 1.5em;
   text-align: center;
@@ -80,19 +94,25 @@ img {
   color: #FFFFFF;
   font-weight: 500;
 }
+
+/* การปรับสำหรับหน้าจอเล็ก */
 @media (max-width: 768px) {
   .wrapper {
-    top: 50%; /* เลื่อนลงให้อยู่กึ่งกลางมือถือ */
+    top: 50%; /* ปรับตำแหน่งให้อยู่กึ่งกลางหน้าจอ */
     padding: 1.5em; /* ลด padding */
   }
 
   #spin-btn {
-    height: 18%; /* ปรับขนาดปุ่ม */
+    height: 18%; /* ลดขนาดปุ่ม */
     width: 18%;
     font-size: 1.2em; /* ลดฟอนต์ */
   }
 
   #final-value {
     font-size: 1.2em; /* ลดฟอนต์ข้อความ */
+  }
+
+  #wheel {
+    max-width: 250px; /* ลดขนาดวงล้อสำหรับมือถือ */
   }
 }
