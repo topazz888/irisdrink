@@ -14,7 +14,7 @@ body {
   position: center;
     width: 100%;
     max-width: 500px;
-  transform:translate(-55%,-55%); rotate(360deg);
+  transform:translate(-50%,-50%);
   top: 5%;
 }
 .wrapper {
