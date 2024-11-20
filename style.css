@@ -14,7 +14,7 @@ body {
   position: absolute;
     width: 100%;
     max-width: 500px;
-  transform: translate(-50%, -60%);
+  transform: translate(0%, -60%);
   align: "start",
   anchor: "end",
   top: 5%;
