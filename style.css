@@ -14,8 +14,8 @@ body {
   position: absolute;
     width: 100%;
     max-width: 500px;
-  transform:translate(-50%, -40%); rotate(360deg);
-  top: 15%;
+  transform:translate(-40%, -50%); rotate(360deg);
+  top: 5%;
 }
 .wrapper {
   width: 90%;
