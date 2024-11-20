@@ -4,209 +4,114 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
+
 body {
-  height: auto;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: linear-gradient(-90deg, #0D2501, #0D2501);
 }
 
-
-.header-image {
-  position: center;
-    width: 80%;
-    max-width: 500px;
-  margin-bottom: 20px;
-  top: 15%;
-  left: 50%; /* เพิ่ม */
-  transform: translateX(-50%); /* เพิ่ม */
-}
 .wrapper {
   width: 90%;
-  max-width: 34.37em;
-  max-height: 90vh;
+  max-width: 500px;
   background-color: #812719;
-  position: absolute;
-  transform: translate(-50%, -50%);
-  top: 60%;
-  left: 50%;
-  padding: 3em;
+  padding: 2em;
   border-radius: 1em;
   box-shadow: 0 4em 5em rgba(27, 8, 53, 0.2);
+  text-align: center;
 }
+
 .container {
   position: relative;
-  width: 100%;
-  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-#wheel {
-  max-height: inherit;
-  width: inherit;
-  top: 10;
-  padding: 0;
-}
-@keyframes rotate {
-  100% {
-    transform: rotate(360deg);
-  }
-}
+
 #spin-btn {
   position: absolute;
-  transform: translate(-50%, -50%);
-  top: 50%;
-  left: 50%;
-  height: 26%;
-  width: 26%;
+  height: 80px;
+  width: 80px;
   border-radius: 50%;
   cursor: pointer;
   border: 0;
   background: radial-gradient(#812719 50%, #d88a40 85%);
   color: #ffffff;
   text-transform: uppercase;
-  font-size: 1.8em;
-  letter-spacing: 0.1em;
+  font-size: 1.2em;
   font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-img {
-  position: absolute;
-  width: 4em;
-  top: 50%;
-  right: -5%;
- 
-}
-#final-value {
-  font-size: 1.5em;
-  text-align: center;
-  margin-top: 1.5em;
-  color: #FFFFFF;
-  font-weight: 500;
-}
-@media screen and (max-width: 400px) {
-  .header-image {
-    position: center;
-    width: 80%;
-    max-width: 400px;
-    margin-bottom: 20px;
-    top: 15%;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-  
-  .wrapper {
-    width: 90%;
-    font-size: 10px;
-  }
-  .container {
-    width: 80%;
-    height: 80%;
-  }
-  .spin-wheel {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 150%; /* ขนาดวงล้อ */
-  max-width: 300px; /* จำกัดขนาดวงล้อ */
+
+#wheel {
+  width: 100%;
+  max-width: 300px;
   height: auto;
 }
-  .spin-button {
-    font-size: 12px;
+
+#final-value {
+  font-size: 1.2em;
+  margin-top: 1em;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+@media screen and (max-width: 400px) {
+  .wrapper {
+    padding: 1em;
   }
+
   #spin-btn {
+    height: 60px;
+    width: 60px;
     font-size: 1em;
   }
-  img {
-    right: 5%;
+
+  #final-value {
+    font-size: 1em;
+  }
+
+  #wheel {
+    max-width: 250px;
   }
 }
 
 @media screen and (min-width: 401px) and (max-width: 768px) {
-  .header-image {
-    width: 90%;
-    max-width: 600px;
-    margin-bottom: 30px;
-  }
-  .wrapper {
-    width: 90%;
-    font-size: 12px;
-  }
-  .container {
-    width: 70%;
-    height: 70%;
-  }
-  .spin-wheel {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%; /* ขนาดวงล้อ */
-  max-width: 650px; /* จำกัดขนาดวงล้อ */
-  height: auto;
-}
-  .spin-button {
-    font-size: 14px;
-  }
   #spin-btn {
-    font-size: 1.2em;
+    height: 70px;
+    width: 70px;
+    font-size: 1.1em;
+  }
+
+  #wheel {
+    max-width: 300px;
+  }
+
+  #final-value {
+    font-size: 1.1em;
   }
 }
 
-@media screen and (min-width: 769px) and (max-width: 1300px) {
-  .header-image {
-    width: 100%;
-    max-width: 800px;
-    margin-bottom: 40px;
-  }
+@media screen and (min-width: 769px) {
   .wrapper {
-    width: 90%;
-    font-size: 14px;
+    max-width: 600px;
   }
-  .container {
-    width: 80%;
-    height: 80%;
-  }
-  .spin-wheel {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%; /* ขนาดวงล้อ */
-  max-width: 900px; /* จำกัดขนาดวงล้อ */
-  height: auto;
-}
-  .spin-button {
-    font-size: 16px;
-  }
+
   #spin-btn {
+    height: 100px;
+    width: 100px;
     font-size: 1.5em;
   }
-}
 
-@media screen and (min-width: 1301px) {
-  .header-image {
-    width: 100%;
-    max-width: 1000px;
-    margin-bottom: 50px;
+  #wheel {
+    max-width: 400px;
   }
-  .wrapper {
-    width: 90%;
-    font-size: 16px;
-  }
-  .container {
-    width: 90%;
-    height: 90%;
-  }
-  .spin-wheel {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%; /* ขนาดวงล้อ */
-  max-width: 1000px; /* จำกัดขนาดวงล้อ */
-  height: auto;
-}
-  .spin-button {
-    font-size: 18px;
-  }
-  #spin-btn {
-    font-size: 2em;
+
+  #final-value {
+    font-size: 1.5em;
   }
 }
