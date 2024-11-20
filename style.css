@@ -80,6 +80,15 @@ img {
   font-weight: 500;
 }
 @media screen and (max-width: 400px) {
+  .header-image {
+  position: center;
+    width: 80%;
+    max-width: 400px;
+  margin-bottom: 20px;
+  top: 15%;
+  left: 50%; /* เพิ่ม */
+  transform: translateX(-50%); /* เพิ่ม */
+}
   .wrapper {
     font-size: 10px;
     padding: 1em;
@@ -89,6 +98,15 @@ img {
   }
 }
 @media screen and (max-width: 768px) {
+   .header-image {
+  position: center;
+    width: 80%;
+    max-width: 400px;
+  margin-bottom: 20px;
+  top: 15%;
+  left: 50%; /* เพิ่ม */
+  transform: translateX(-50%); /* เพิ่ม */
+}
   .wrapper {
     font-size: 12px;
     padding: 2em;
@@ -98,6 +116,15 @@ img {
   }
 }
 @media screen and (max-width: 1300px) {
+   .header-image {
+  position: center;
+    width: 80%;
+    max-width: 400px;
+  margin-bottom: 20px;
+  top: 15%;
+  left: 50%; /* เพิ่ม */
+  transform: translateX(-50%); /* เพิ่ม */
+}
   .wrapper {
     font-size: 14px;
   }
@@ -106,6 +133,15 @@ img {
   }
 }
 @media screen and (max-width: 1600px) {
+   .header-image {
+  position: center;
+    width: 80%;
+    max-width: 400px;
+  margin-bottom: 20px;
+  top: 15%;
+  left: 50%; /* เพิ่ม */
+  transform: translateX(-50%); /* เพิ่ม */
+}
   .wrapper {
     font-size: 16px;
   }
