@@ -11,14 +11,15 @@ body {
 
 
 .header-image {
-  position: absolute;
-    width: 100%;
+  position: center;
+    width: 80%;
     max-width: 500px;
   transform: translate(-50%, 0%);
+  margin-bottom: 20px;
   align: "start",
   anchor: "end",
-  left: 50%
-  top: 5%;
+  left: 33%
+  top: 15%;
 }
 .wrapper {
   width: 90%;
