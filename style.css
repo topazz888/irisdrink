@@ -14,9 +14,10 @@ body {
   position: absolute;
     width: 100%;
     max-width: 500px;
-  transform: translate(0%, -60%);
+  transform: translate(-55%, -60%);
   align: "start",
   anchor: "end",
+  left: 5%
   top: 5%;
 }
 .wrapper {
