@@ -11,13 +11,11 @@ body {
 
 
 .header-image {
-  position: absolute;
+  position: center;
     width: 80%;
     max-width: 500px;
+  margin-bottom: 20px;
   top: 15%;
-  left: 50%; /* เพิ่ม */
-  transform: translate(-50%, 0);
-
 }
 .wrapper {
   width: 90%;
@@ -79,12 +77,11 @@ img {
   color: #FFFFFF;
   font-weight: 500;
 }
-@media (max-width: 768px) {
-    .spin-wheel {
-        width: 100%;
-        height: auto;
-    }
-    .spin-button {
-        font-size: 14px;
-    }
+@media screen and (max-width: 768px) {
+  .wrapper {
+    font-size: 12px;
+  }
+  img {
+    right: 5%;
+  }
 }
