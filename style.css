@@ -12,7 +12,15 @@ body {
   align-items: center;
   background: linear-gradient(-90deg, #0D2501, #0D2501);
 }
-
+ .header-image {
+  position: center;
+    width: 80%;
+    max-width: 768px;
+  margin-bottom: 20px;
+  top: 15%;
+  left: 50%; /* เพิ่ม */
+  transform: translateX(-50%); /* เพิ่ม */
+}
 .wrapper {
   width: 90%;
   max-width: 500px;
