@@ -4,17 +4,21 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
+
 body {
   height: 100vh;
   background: linear-gradient(-90deg, #0D2501, #0D2501);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* ส่วนของ Header */
+/* ส่วนหัว */
 .header-image {
   position: absolute;
-  width: 80%;
+  width: 60%;
   max-width: 500px;
-  top: 15%;
+  top: 10%;
   left: 50%;
   transform: translate(-50%, 0);
 }
@@ -22,97 +26,95 @@ body {
 /* กล่องหลัก */
 .wrapper {
   width: 90%;
-  max-width: 34.37em;
-  height: auto;
+  max-width: 600px;
   background-color: #812719;
-  position: absolute;
-  transform: translate(-50%, -50%);
-  top: 60%;
-  left: 50%;
-  padding: 3em;
+  padding: 2em;
   border-radius: 1em;
   box-shadow: 0 4em 5em rgba(27, 8, 53, 0.2);
+  text-align: center;
+  position: relative;
 }
 
-/* คอนเทนเนอร์สำหรับวงล้อ */
+/* คอนเทนเนอร์ */
 .container {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  height: 100%;
+  flex-direction: column;
 }
 
 /* วงล้อ */
 #wheel {
-  max-height: inherit;
-  width: 100%; /* ปรับให้เต็ม container */
-  max-width: 300px; /* กำหนดขนาดสูงสุด */
+  width: 100%;
+  max-width: 400px;
   height: auto;
-  padding: 0;
-}
-
-/* แอนิเมชันหมุน */
-@keyframes rotate {
-  100% {
-    transform: rotate(360deg);
-  }
+  margin: 0 auto;
 }
 
 /* ปุ่มหมุน */
 #spin-btn {
-  position: absolute;
-  transform: translate(-50%, -50%);
-  top: 50%;
-  left: 50%;
-  height: 20%;
-  width: 20%;
+  margin-top: 20px;
+  height: 80px;
+  width: 80px;
   border-radius: 50%;
+  border: none;
   cursor: pointer;
-  border: 0;
   background: radial-gradient(#812719 50%, #d88a40 85%);
   color: #ffffff;
   text-transform: uppercase;
-  font-size: 1.5em;
-  letter-spacing: 0.1em;
-  font-weight: 600;
-}
-
-/* ไอคอนหรือภาพ */
-img {
-  position: absolute;
-  width: 4em;
-  top: 50%;
-  right: -10%;
+  font-size: 1.2em;
+  font-weight: bold;
 }
 
 /* ข้อความผลลัพธ์ */
 #final-value {
   font-size: 1.5em;
-  text-align: center;
-  margin-top: 1.5em;
-  color: #FFFFFF;
+  color: #ffffff;
   font-weight: 500;
+  margin-top: 1em;
 }
 
-/* การปรับสำหรับหน้าจอเล็ก */
+/* Media Queries สำหรับหน้าจอเล็ก */
 @media (max-width: 768px) {
   .wrapper {
-    top: 50%; /* ปรับตำแหน่งให้อยู่กึ่งกลางหน้าจอ */
-    padding: 1.5em; /* ลด padding */
+    padding: 1.5em;
+    max-width: 90%;
   }
 
   #spin-btn {
-    height: 18%; /* ลดขนาดปุ่ม */
-    width: 18%;
-    font-size: 1.2em; /* ลดฟอนต์ */
+    height: 60px;
+    width: 60px;
+    font-size: 1em;
   }
 
   #final-value {
-    font-size: 1.2em; /* ลดฟอนต์ข้อความ */
+    font-size: 1.2em;
   }
 
   #wheel {
-    max-width: 250px; /* ลดขนาดวงล้อสำหรับมือถือ */
+    max-width: 250px;
+  }
+}
+
+/* Media Queries สำหรับหน้าจอใหญ่ */
+@media (min-width: 1024px) {
+  .wrapper {
+    max-width: 700px;
+    padding: 3em;
+  }
+
+  #wheel {
+    max-width: 450px;
+  }
+
+  #spin-btn {
+    height: 100px;
+    width: 100px;
+    font-size: 1.5em;
+  }
+
+  #final-value {
+    font-size: 2em;
   }
 }
