@@ -82,6 +82,7 @@ img {
 @media screen and (max-width: 400px) {
   .wrapper {
     font-size: 10px;
+    padding: 1em;
   }
   img {
     right: 5%;
@@ -90,6 +91,7 @@ img {
 @media screen and (max-width: 768px) {
   .wrapper {
     font-size: 12px;
+    padding: 2em;
   }
   img {
     right: 5%;
