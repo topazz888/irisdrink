@@ -76,7 +76,7 @@ body {
   }
 
   #wheel {
-    max-width: 250px;
+    max-width: 390px;
   }
 }
 
@@ -88,7 +88,7 @@ body {
   }
 
   #wheel {
-    max-width: 300px;
+    max-width: 700px;
   }
 
   #final-value {
@@ -108,7 +108,7 @@ body {
   }
 
   #wheel {
-    max-width: 400px;
+    max-width: 1000px;
   }
 
   #final-value {
