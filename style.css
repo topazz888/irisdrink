@@ -16,6 +16,8 @@ body {
     max-width: 500px;
   margin-bottom: 20px;
   top: 15%;
+  left: 50%; /* เพิ่ม */
+  transform: translateX(-50%); /* เพิ่ม */
 }
 .wrapper {
   width: 90%;
@@ -80,6 +82,22 @@ img {
 @media screen and (max-width: 768px) {
   .wrapper {
     font-size: 12px;
+  }
+  img {
+    right: 5%;
+  }
+}
+@media screen and (max-width: 1300px) {
+  .wrapper {
+    font-size: 14px;
+  }
+  img {
+    right: 5%;
+  }
+}
+@media screen and (max-width: 1600px) {
+  .wrapper {
+    font-size: 16px;
   }
   img {
     right: 5%;
