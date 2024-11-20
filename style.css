@@ -79,11 +79,12 @@ img {
   color: #FFFFFF;
   font-weight: 500;
 }
-@media screen and (max-width: 768px) {
-  .wrapper {
-    font-size: 12px;
-  }
-  img {
-    right: 5%;
-  }
+@media (max-width: 768px) {
+    .spin-wheel {
+        width: 100%;
+        height: auto;
+    }
+    .spin-button {
+        font-size: 14px;
+    }
 }
