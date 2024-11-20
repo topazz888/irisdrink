@@ -17,7 +17,6 @@ body {
   margin-bottom: 20px;
   top: 15%;
   left: 50%; /* เพิ่ม */
-  transform: translateX(-50%); /* เพิ่ม */
 }
 .wrapper {
   width: 90%;
@@ -88,7 +87,7 @@ img {
   margin-bottom: 20px;
   top: 15%;
   left: 50%; /* เพิ่ม */
-  transform: translateX(-50%); /* เพิ่ม */
+  
 }
   .wrapper {
     font-size: 10px;
@@ -114,7 +113,7 @@ img {
   margin-bottom: 20px;
   top: 15%;
   left: 50%; /* เพิ่ม */
-  transform: translateX(-50%); /* เพิ่ม */
+  
 }
   .wrapper {
     font-size: 12px;
@@ -140,7 +139,7 @@ img {
   margin-bottom: 20px;
   top: 15%;
   left: 50%; /* เพิ่ม */
-  transform: translateX(-50%); /* เพิ่ม */
+  
 }
   .wrapper {
     font-size: 14px;
@@ -165,7 +164,7 @@ img {
   margin-bottom: 20px;
   top: 15%;
   left: 50%; /* เพิ่ม */
-  transform: translateX(-50%); /* เพิ่ม */
+  
 }
   .wrapper {
     font-size: 16px;
