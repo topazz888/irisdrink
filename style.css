@@ -5,7 +5,7 @@
   font-family: "Poppins", sans-serif;
 }
 body {
-  height: 100vh;
+  height: auto;
   background: linear-gradient(-90deg, #0D2501, #0D2501);
 }
 
@@ -80,6 +80,7 @@ img {
   font-weight: 500;
 }
 @media screen and (max-width: 400px) {
+  
   .header-image {
   position: center;
     width: 80%;
@@ -93,6 +94,14 @@ img {
     font-size: 10px;
     padding: 1em;
   }
+  .container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+  #spin-btn {
+  font-size: 1em;
+}
   img {
     right: 5%;
   }
@@ -109,8 +118,16 @@ img {
 }
   .wrapper {
     font-size: 12px;
-    padding: 2em;
+    padding: 1.5em;
   }
+  .container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+  #spin-btn {
+  font-size: 1em;
+}
   img {
     right: 5%;
   }
@@ -128,6 +145,14 @@ img {
   .wrapper {
     font-size: 14px;
   }
+  .container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+  #spin-btn {
+  font-size: 1.8em;
+}
   img {
     right: 5%;
   }
@@ -145,6 +170,14 @@ img {
   .wrapper {
     font-size: 16px;
   }
+  .container {
+  position: relative;
+  width: 150%;
+  height: 150%;
+}
+  #spin-btn {
+  font-size: 2em;
+}
   img {
     right: 5%;
   }
