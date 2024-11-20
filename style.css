@@ -79,6 +79,14 @@ img {
   color: #FFFFFF;
   font-weight: 500;
 }
+@media screen and (max-width: 400px) {
+  .wrapper {
+    font-size: 10px;
+  }
+  img {
+    right: 5%;
+  }
+}
 @media screen and (max-width: 768px) {
   .wrapper {
     font-size: 12px;
