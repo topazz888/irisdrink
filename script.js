@@ -1,96 +1,133 @@
+const wheel = document.getElementById("wheel");
+const spinBtn = document.getElementById("spin-btn");
+const finalValue = document.getElementById("final-value");
 
-const canvas = document.getElementById('wheelCanvas');
-const ctx = canvas.getContext('2d');
-
-const prizes = [
-    "Classic & Signature Cocktail",
-    "1 Whiskey Shot",
-    "1 Tequila Shot",
-    "OnlyFun (Shooter)",
-    "Good Girls Swallow (Shooter)",
-    "Money Shot (Shooter)",
-    "Take It All In (Shooter)",
-    "You did great this year, but Santa still not chose you :(",
-    "Almost there! Maybe next time luck will be on your side. Cheers!",
-    "Good vibes only! You’re still a winner in our eyes. 🥂"
+const rotationValues = [
+  { minDegree: 0, maxDegree: 35, value: "Classic & Signature Cocktail" },
+  { minDegree: 36, maxDegree: 71, value: "OnlyFun" },
+  { minDegree: 72, maxDegree: 107, value: "You did great this year, but Santa still not chose you :(" },
+  { minDegree: 108, maxDegree: 143, value: "Good Girls Swallow" },
+  { minDegree: 144, maxDegree: 179, value: "Whiskey 1 shot" },
+  { minDegree: 180, maxDegree: 215, value: "Money Shot" },
+  { minDegree: 216, maxDegree: 251, value: "No Luck, Sad :((" },
+  { minDegree: 252, maxDegree: 287, value: "Tequila 1 shot" },
+  { minDegree: 288, maxDegree: 323, value: "Take It All In" },
+  { minDegree: 324, maxDegree: 359, value: "Unfortunate, But Happy Christmas" },
 ];
 
-const prizeColors = [
-    "#FF6347", "#FFD700", "#90EE90", "#20B2AA", 
-    "#9370DB", "#FF69B4", "#4682B4", "#A9A9A9", 
-    "#A9A9A9", "#A9A9A9"
+const data = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10];
+
+const pieColors = [
+  "#99414A",
+  "#54060E",
+  "#99414A",
+  "#54060E",
+  "#99414A",
+  "#54060E",
+  "#99414A",
+  "#54060E",
+  "#99414A",
+  "#54060E",
 ];
 
-// 70% chance to win a drink, 30% chance to get a consolation message
-const probabilityWeights = [
-    7, 7, 7, 7, 7, 7, 7, 3, 3, 3
-];
+let myChart = new Chart(wheel, {
+  plugins: [ChartDataLabels],
+  type: "pie",
+  data: {
+    labels: [
+      "  Classic & Signature Cocktail",
+      "  OnlyFun",
+      "  You did great this year, but Santa still not chose you :(",
+      "  Good Girls Swallow",
+      "  Whiskey 1 shot",
+      "  Money Shot",
+      "  No Luck, Sad :((",
+      "  Tequila 1 shot",
+      "  Take It All In",
+      "  Unfortunate, But Happy Christmas",
+    ],
+    datasets: [
+      {
+        backgroundColor: pieColors,
+        data: data,
+      },
+    ],
+  },
+  options: {
+    responsive: true,
+    animation: { duration: 0 },
+    plugins: {
+      tooltip: false,
+      legend: {
+        display: false,
+      },
+      datalabels: {
+        color: "#ffffff",
+        anchor: "end",
+        align: "start",
+        offset: 20,
+        clip: false,
+        formatter: (value, context) => {
+          // จัดการข้อความให้ขึ้นบรรทัดใหม่เมื่อยาวเกินไป
+          let label = context.chart.data.labels[context.dataIndex];
+          let words = label.split(" ");
+          let lines = [];
+          let line = "";
 
-let startAngle = 0;
-let spinTimeout = null;
+          for (let word of words) {
+            if ((line + word).length <= 25) {
+              line += word + " ";
+            } else {
+              lines.push(line.trim());
+              line = word + " ";
+            }
+          }
+          lines.push(line.trim());
 
-// Calculate total weight
-const totalWeight = probabilityWeights.reduce((a, b) => a + b, 0);
+          return lines.join("\n"); // แบ่งข้อความด้วย "\n" สำหรับขึ้นบรรทัดใหม่
+        },
+        font: { size: 13 },
+        textAlign: "center", 
+         
+        },
+      
+      },
+    },
+  },
+);
 
-// Draw the wheel
-function drawWheel() {
-    const arc = Math.PI * 2 / prizes.length;
-    for (let i = 0; i < prizes.length; i++) {
-        const angle = startAngle + i * arc;
-        ctx.fillStyle = prizeColors[i % prizeColors.length];
-        ctx.beginPath();
-        ctx.moveTo(250, 250);
-        ctx.arc(250, 250, 250, angle, angle + arc, false);
-        ctx.lineTo(250, 250);
-        ctx.fill();
+const valueGenerator = (angleValue) => {
+  let correctedDegree = 452 - angleValue;
+  correctedDegree = correctedDegree % 360;
 
-        ctx.save();
-        ctx.fillStyle = "white";
-        ctx.translate(
-            250 + Math.cos(angle + arc / 2) * 150,
-            250 + Math.sin(angle + arc / 2) * 150
-        );
-        ctx.rotate(angle + arc / 2);
-        ctx.fillText(prizes[i], -30, 10);
-        ctx.restore();
+  for (let i of rotationValues) {
+    if (correctedDegree >= i.minDegree && correctedDegree <= i.maxDegree) {
+      finalValue.innerHTML = `<p>${i.value}</p>`;
+      spinBtn.disabled = false;
+      break;
     }
-}
+  }
+};
 
-// Weighted random selection
-function getRandomPrize() {
-    const random = Math.random() * totalWeight;
-    let cumulativeWeight = 0;
-    for (let i = 0; i < probabilityWeights.length; i++) {
-        cumulativeWeight += probabilityWeights[i];
-        if (random < cumulativeWeight) {
-            return i;
-        }
+let count = 0;
+let resultValue = 101;
+
+spinBtn.addEventListener("click", () => {
+  spinBtn.disabled = true;
+  finalValue.innerHTML = `<p>Good Luck!</p>`;
+  let randomDegree = Math.floor(Math.random() * 360);
+  let rotationInterval = window.setInterval(() => {
+    myChart.options.rotation = myChart.options.rotation + resultValue;
+    myChart.update();
+    if (myChart.options.rotation >= 360) {
+      count += 1;
+      resultValue -= 5;
+      myChart.options.rotation = 0;
+    } else if (count > 15 && myChart.options.rotation == randomDegree) {
+      valueGenerator(randomDegree);
+      clearInterval(rotationInterval);
+      count = 0;
+      resultValue = 101;
     }
-    return prizes.length - 1; // fallback to the last item
-}
-
-// Spin the wheel
-function spinWheel() {
-    const prizeIndex = getRandomPrize();
-    let spinAngleStart = Math.random() * 10 + 10;
-    let spinTime = 0;
-    const spinTimeTotal = Math.random() * 3000 + 4000;
-
-    function rotateWheel() {
-        spinTime += 30;
-        if (spinTime >= spinTimeTotal) {
-            clearTimeout(spinTimeout);
-            const result = prizes[prizeIndex];
-            document.getElementById('result').textContent = `Congratulations! You got: ${result}`;
-            return;
-        }
-        const spinAngle = spinAngleStart - (spinTime / spinTimeTotal) * spinAngleStart;
-        startAngle += (spinAngle * Math.PI) / 180;
-        drawWheel();
-        spinTimeout = setTimeout(rotateWheel, 30);
-    }
-    rotateWheel();
-}
-
-document.getElementById('spinButton').addEventListener('click', spinWheel);
-drawWheel();
+  }, 10);
+});
