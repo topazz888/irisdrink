@@ -22,13 +22,13 @@ body {
 .wrapper {
   width: 90%;
   max-width: 34.37em;
-  max-height: 90vh;
+  max-height: auto;
   background-color: #812719;
   position: absolute;
   transform: translate(-50%, -50%);
   top: 60%;
   left: 50%;
-  padding: 3em;
+  padding: 2em;
   border-radius: 1em;
   box-shadow: 0 4em 5em rgba(27, 8, 53, 0.2);
 }
@@ -53,7 +53,7 @@ body {
   transform: translate(-50%, -50%);
   top: 50%;
   left: 50%;
-  height: 26%;
+  height: 20%;
   width: 26%;
   border-radius: 50%;
   cursor: pointer;
@@ -61,7 +61,7 @@ body {
   background: radial-gradient(#812719 50%, #d88a40 85%);
   color: #ffffff;
   text-transform: uppercase;
-  font-size: 1.8em;
+  font-size: 1.5em;
   letter-spacing: 0.1em;
   font-weight: 600;
 }
@@ -80,11 +80,18 @@ img {
   font-weight: 500;
 }
 @media (max-width: 768px) {
-    .spin-wheel {
-        width: 100%;
-        height: auto;
-    }
-    .spin-button {
-        font-size: 14px;
-    }
+  .wrapper {
+    top: 50%; /* เลื่อนลงให้อยู่กึ่งกลางมือถือ */
+    padding: 1.5em; /* ลด padding */
+  }
+
+  #spin-btn {
+    height: 18%; /* ปรับขนาดปุ่ม */
+    width: 18%;
+    font-size: 1.2em; /* ลดฟอนต์ */
+  }
+
+  #final-value {
+    font-size: 1.2em; /* ลดฟอนต์ข้อความ */
+  }
 }
