@@ -4,15 +4,110 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
-
 body {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  height: auto;
   background: linear-gradient(-90deg, #0D2501, #0D2501);
 }
- .header-image {
+
+
+.header-image {
+  position: center;
+    width: 80%;
+    max-width: 500px;
+  margin-bottom: 20px;
+  top: 15%;
+  left: 50%; /* เพิ่ม */
+  transform: translateX(-50%); /* เพิ่ม */
+}
+.wrapper {
+  width: 90%;
+  max-width: 34.37em;
+  max-height: 90vh;
+  background-color: #812719;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 60%;
+  left: 50%;
+  padding: 3em;
+  border-radius: 1em;
+  box-shadow: 0 4em 5em rgba(27, 8, 53, 0.2);
+}
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+#wheel {
+  max-height: inherit;
+  width: inherit;
+  top: 10;
+  padding: 0;
+}
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+#spin-btn {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  height: 26%;
+  width: 26%;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 0;
+  background: radial-gradient(#812719 50%, #d88a40 85%);
+  color: #ffffff;
+  text-transform: uppercase;
+  font-size: 1.8em;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+}
+img {
+  position: absolute;
+  width: 4em;
+  top: 50%;
+  right: -5%;
+ 
+}
+#final-value {
+  font-size: 1.5em;
+  text-align: center;
+  margin-top: 1.5em;
+  color: #FFFFFF;
+  font-weight: 500;
+}
+@media screen and (max-width: 400px) {
+  
+  .header-image {
+  position: center;
+    width: 80%;
+    max-width: 400px;
+  margin-bottom: 20px;
+  top: 15%;
+  left: 50%; /* เพิ่ม */
+  transform: translateX(-50%); /* เพิ่ม */
+}
+  .wrapper {
+    font-size: 10px;
+    padding: 1em;
+  }
+  .container {
+  position: relative;
+  width: 60%;
+  height: 60%;
+}
+  #spin-btn {
+  font-size: 1em;
+}
+  img {
+    right: 5%;
+  }
+}
+@media screen and (max-width: 768px) {
+   .header-image {
   position: center;
     width: 80%;
     max-width: 768px;
@@ -21,111 +116,69 @@ body {
   left: 50%; /* เพิ่ม */
   transform: translateX(-50%); /* เพิ่ม */
 }
-.wrapper {
-  width: 90%;
-  max-width: 500px;
-  background-color: #812719;
-  padding: 2em;
-  border-radius: 1em;
-  box-shadow: 0 4em 5em rgba(27, 8, 53, 0.2);
-  text-align: center;
-}
-
-.container {
+  .wrapper {
+    font-size: 12px;
+    padding: 1.5em;
+  }
+  .container {
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1em; /* ปรับขนาดฟอนต์ที่นี่ */
+  width: 80%;
+  height: 80%;
 }
-
-#spin-btn {
-  position: absolute;
-  height: 80px;
-  width: 80px;
-  border-radius: 50%;
-  cursor: pointer;
-  border: 0;
-  background: radial-gradient(#812719 50%, #d88a40 85%);
-  color: #ffffff;
-  text-transform: uppercase;
-  font-size: 1.2em;
-  font-weight: 600;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  #spin-btn {
+  font-size: 1em;
 }
-
-#wheel {
+  img {
+    right: 5%;
+  }
+}
+@media screen and (max-width: 1300px) {
+   .header-image {
+  position: center;
+    width: 80%;
+    max-width: 1300px;
+  margin-bottom: 20px;
+  top: 15%;
+  left: 50%; /* เพิ่ม */
+  transform: translateX(-50%); /* เพิ่ม */
+}
+  .wrapper {
+    font-size: 14px;
+  }
+  .container {
+  position: relative;
   width: 100%;
-  max-width: 300px;
-  height: auto;
+  height: 100%;
 }
-
-#final-value {
-  font-size: 1.2em;
-  margin-top: 1em;
-  color: #ffffff;
-  font-weight: 500;
-}
-
-@media screen and (max-width: 400px) {
-  .wrapper {
-    max-width: 400px;
-    padding: 1em;
-  }
-
   #spin-btn {
-    height: 60px;
-    width: 60px;
-    font-size: 1em;
-  }
-
-  #final-value {
-    font-size: 1em;
-  }
-
-  #wheel {
-    max-width: 390px;
+  font-size: 1.8em;
+}
+  img {
+    right: 5%;
   }
 }
-
-@media screen and (min-width: 401px) and (max-width: 768px) {
-  .wrapper {
-    max-width: 700px;
-    padding: 1em;
-  }
-  #spin-btn {
-    height: 70px;
-    width: 70px;
-    font-size: 1.1em;
-  }
-
-  #wheel {
-    max-width: 700px;
-  }
-
-  #final-value {
-    font-size: 1.1em;
-  }
+@media screen and (max-width: 1600px) {
+   .header-image {
+  position: center;
+    width: 80%;
+    max-width: 1600px;
+  margin-bottom: 20px;
+  top: 15%;
+  left: 50%; /* เพิ่ม */
+  transform: translateX(-50%); /* เพิ่ม */
 }
-
-@media screen and (min-width: 769px) {
   .wrapper {
-    max-width: 700px;
+    font-size: 16px;
   }
-
+  .container {
+  position: relative;
+  width: 150%;
+  height: 150%;
+}
   #spin-btn {
-    height: 100px;
-    width: 100px;
-    font-size: 1.5em;
-  }
-
-  #wheel {
-    max-width: 1000px;
-  }
-
-  #final-value {
-    font-size: 1.5em;
+  font-size: 2em;
+}
+  img {
+    right: 5%;
   }
 }
