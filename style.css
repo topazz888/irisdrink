@@ -89,6 +89,7 @@ img {
     left: 50%;
     transform: translateX(-50%);
   }
+  
   .wrapper {
     font-size: 10px;
   }
@@ -97,9 +98,14 @@ img {
     height: 60%;
   }
   .spin-wheel {
-    width: 100%;
-    height: auto;
-  }
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%; /* ขนาดวงล้อ */
+  max-width: 300px; /* จำกัดขนาดวงล้อ */
+  height: auto;
+}
   .spin-button {
     font-size: 12px;
   }
@@ -125,9 +131,14 @@ img {
     height: 70%;
   }
   .spin-wheel {
-    width: 80%;
-    height: auto;
-  }
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%; /* ขนาดวงล้อ */
+  max-width: 650px; /* จำกัดขนาดวงล้อ */
+  height: auto;
+}
   .spin-button {
     font-size: 14px;
   }
@@ -150,9 +161,14 @@ img {
     height: 80%;
   }
   .spin-wheel {
-    width: 70%;
-    height: auto;
-  }
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%; /* ขนาดวงล้อ */
+  max-width: 900px; /* จำกัดขนาดวงล้อ */
+  height: auto;
+}
   .spin-button {
     font-size: 16px;
   }
@@ -175,9 +191,14 @@ img {
     height: 90%;
   }
   .spin-wheel {
-    width: 60%;
-    height: auto;
-  }
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%; /* ขนาดวงล้อ */
+  max-width: 1000px; /* จำกัดขนาดวงล้อ */
+  height: auto;
+}
   .spin-button {
     font-size: 18px;
   }
