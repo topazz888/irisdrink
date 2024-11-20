@@ -15,6 +15,9 @@ body {
     width: 80%;
     max-width: 500px;
   top: 15%;
+  left: 50%; /* เพิ่ม */
+  transform: translateX(-50%); /* เพิ่ม */
+
 }
 .wrapper {
   width: 90%;
