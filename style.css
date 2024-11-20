@@ -11,11 +11,11 @@ body {
 
 
 .header-image {
-  position: center;
+  position: absolute;
     width: 100%;
     max-width: 500px;
   transform:rotate(360deg);
-  left:50%;
+  left: 50%;
   top: 5%;
 }
 .wrapper {
