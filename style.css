@@ -11,7 +11,7 @@ body {
 
 
 .header-image {
-  position: relative;
+  position: center;
     width: 100%;
     max-width: 500px;
   transform:rotate(360deg);
