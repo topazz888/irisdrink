@@ -38,8 +38,8 @@ body {
   height: 100%;
 }
 #wheel {
-  max-height: relative;
-  width: relative;
+  max-height: inherit;
+  width: inherit;
   top: 10;
   padding: 0;
 }
