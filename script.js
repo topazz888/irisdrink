@@ -68,7 +68,6 @@ let myChart = new Chart(wheel, {
         offset: 20,
         clip: false,
         formatter: (value, context) => {
-          // จัดการข้อความให้ขึ้นบรรทัดใหม่เมื่อยาวเกินไป
           let label = context.chart.data.labels[context.dataIndex];
           let words = label.split(" ");
           let lines = [];
@@ -84,17 +83,14 @@ let myChart = new Chart(wheel, {
           }
           lines.push(line.trim());
 
-          return lines.join("\n"); // แบ่งข้อความด้วย "\n" สำหรับขึ้นบรรทัดใหม่
+          return lines.join("\n");
         },
         font: { size: 13 },
-        textAlign: "center", 
-         
-        },
-      
+        textAlign: "center",
       },
     },
   },
-);
+});
 
 const valueGenerator = (angleValue) => {
   let correctedDegree = 452 - angleValue;
@@ -109,25 +105,33 @@ const valueGenerator = (angleValue) => {
   }
 };
 
+// ตัวแปรใหม่สำหรับควบคุมสถานะการหมุน
+let hasSpun = false;
+
 let count = 0;
 let resultValue = 101;
 
 spinBtn.addEventListener("click", () => {
-  spinBtn.disabled = true;
-  finalValue.innerHTML = `<p>Good Luck!</p>`;
-  let randomDegree = Math.floor(Math.random() * 360);
-  let rotationInterval = window.setInterval(() => {
-    myChart.options.rotation = myChart.options.rotation + resultValue;
-    myChart.update();
-    if (myChart.options.rotation >= 360) {
-      count += 1;
-      resultValue -= 5;
-      myChart.options.rotation = 0;
-    } else if (count > 15 && myChart.options.rotation == randomDegree) {
-      valueGenerator(randomDegree);
-      clearInterval(rotationInterval);
-      count = 0;
-      resultValue = 101;
-    }
-  }, 10);
+  if (!hasSpun) {
+    hasSpun = true; // อัปเดตสถานะว่าหมุนแล้ว
+    spinBtn.disabled = true; // ปิดการใช้งานปุ่ม
+    finalValue.innerHTML = `<p>Good Luck!</p>`;
+    let randomDegree = Math.floor(Math.random() * 360);
+    let rotationInterval = window.setInterval(() => {
+      myChart.options.rotation = myChart.options.rotation + resultValue;
+      myChart.update();
+      if (myChart.options.rotation >= 360) {
+        count += 1;
+        resultValue -= 5;
+        myChart.options.rotation = 0;
+      } else if (count > 15 && myChart.options.rotation == randomDegree) {
+        valueGenerator(randomDegree);
+        clearInterval(rotationInterval);
+        count = 0;
+        resultValue = 101;
+      }
+    }, 10);
+  } else {
+    finalValue.innerHTML = `<p>You can spin only once!</p>`;
+  }
 });
