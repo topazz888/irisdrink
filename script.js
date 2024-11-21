@@ -105,15 +105,13 @@ const valueGenerator = (angleValue) => {
   }
 };
 
-// ตัวแปรใหม่สำหรับควบคุมสถานะการหมุน
+// ตัวแปรใหม่สำหรับควบคุมสถานะการหมุนและเก็บผลลัพธ์
 let hasSpun = false;
+let lastResult = ""; // สำหรับเก็บผลลัพธ์ล่าสุด
 
 let count = 0;
 let resultValue = 101;
-// ตัวแปรใหม่สำหรับเก็บผลลัพธ์ล่าสุด
-let lastResult = "";
 
-// อัปเดต event listener
 spinBtn.addEventListener("click", () => {
   if (!hasSpun) {
     hasSpun = true; // อัปเดตสถานะว่าหมุนแล้ว
@@ -142,4 +140,3 @@ spinBtn.addEventListener("click", () => {
     }, 2000); // 2000 มิลลิวินาที (2 วินาที)
   }
 });
-
