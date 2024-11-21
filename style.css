@@ -23,6 +23,7 @@ body {
   width: 90%;
   max-width: 34.37em;
   max-height: 90vh;
+  overflow: hidden;
   background-color: #54060E;
   position: relative;
   transform: translate(-50%, -40%);
@@ -36,6 +37,7 @@ body {
   position: relative;
   width: 100%;
   height: 100%;
+  
 }
 #wheel {
   max-height: inherit;
@@ -83,20 +85,7 @@ img {
   .wrapper {
     font-size: 12px;
   }
-  #wheel {
-    font-size: 12px; /* ปรับขนาดตัวอักษร */
   img {
     right: 5%;
-  }
-}
-  @media screen and (max-width: 400px) {
-  #wheel {
-    font-size: 10px; /* ปรับขนาดตัวอักษร */
-  }
-  #spin-btn {
-    font-size: 1.2em; /* ปรับขนาดปุ่ม Spin */
-  }
-  #final-value {
-    font-size: 1em; /* ลดขนาดข้อความผลลัพธ์ */
   }
 }
