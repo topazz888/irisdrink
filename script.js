@@ -133,5 +133,6 @@ spinBtn.addEventListener("click", () => {
     }, 10);
   } else {
     finalValue.innerHTML = `<p>You can spin only once!</p>`;
+    finalValue.innerHTML = `<p>Good Luck!</p>`;
   }
 });
