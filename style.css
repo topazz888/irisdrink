@@ -38,8 +38,8 @@ body {
   height: 100%;
 }
 #wheel {
-  max-height: inherit;
-  width: inherit;
+  max-height: relative;
+  width: relative;
   top: 10;
   padding: 0;
 }
@@ -93,7 +93,9 @@ img {
   #wheel {
     font-size: 10px; /* ปรับขนาดตัวอักษร */
   }
-  
+  #spin-btn {
+    font-size: 1.2em; /* ปรับขนาดปุ่ม Spin */
+  }
   #final-value {
     font-size: 1em; /* ลดขนาดข้อความผลลัพธ์ */
   }
