@@ -1,5 +1,5 @@
 * {
-  padding: 0;
+  padding: 1;
   margin: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
@@ -11,20 +11,22 @@ body {
 
 
 .header-image {
-  position: center;
-    width: 80%;
-    max-width: 500px;
-  margin-bottom: 20px;
-  top: 15%;
+  position: relative;
+    width: 100%;
+    max-width: 600px;
+  transform: translate(-50%, 3%);
+  top: 0%;    
+  left: 50%;
+  padding: 2em;
 }
 .wrapper {
   width: 90%;
   max-width: 34.37em;
   max-height: 90vh;
-  background-color: #812719;
-  position: absolute;
-  transform: translate(-50%, -50%);
-  top: 60%;
+  background-color: #54060E;
+  position: relative;
+  transform: translate(-50%, -40%);
+  top: 30%;
   left: 50%;
   padding: 3em;
   border-radius: 1em;
@@ -36,8 +38,8 @@ body {
   height: 100%;
 }
 #wheel {
-  max-height: inherit;
-  width: inherit;
+  max-height: relative;
+  width: relativ;
   top: 10;
   padding: 0;
 }
@@ -56,7 +58,7 @@ body {
   border-radius: 50%;
   cursor: pointer;
   border: 0;
-  background: radial-gradient(#812719 50%, #d88a40 85%);
+  background: radial-gradient(#21203C 50%, #4262BC 85%);
   color: #ffffff;
   text-transform: uppercase;
   font-size: 1.8em;
@@ -81,7 +83,20 @@ img {
   .wrapper {
     font-size: 12px;
   }
+  #wheel {
+    font-size: 12px; /* ปรับขนาดตัวอักษร */
   img {
     right: 5%;
+  }
+}
+  @media screen and (max-width: 400px) {
+  #wheel {
+    font-size: 10px; /* ปรับขนาดตัวอักษร */
+  }
+  #spin-btn {
+    font-size: 1.2em; /* ปรับขนาดปุ่ม Spin */
+  }
+  #final-value {
+    font-size: 1em; /* ลดขนาดข้อความผลลัพธ์ */
   }
 }
