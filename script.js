@@ -3,19 +3,32 @@ const spinBtn = document.getElementById("spin-btn");
 const finalValue = document.getElementById("final-value");
 
 const rotationValues = [
-  { minDegree: 0, maxDegree: 35, value: "Classic & Signature Cocktail" },
-  { minDegree: 36, maxDegree: 71, value: "OnlyFun" },
-  { minDegree: 72, maxDegree: 107, value: "You did great this year, but Santa still not chose you :(" },
-  { minDegree: 108, maxDegree: 143, value: "Good Girls Swallow" },
-  { minDegree: 144, maxDegree: 179, value: "Whiskey 1 shot" },
-  { minDegree: 180, maxDegree: 215, value: "Money Shot" },
-  { minDegree: 216, maxDegree: 251, value: "No Luck, Sad :((" },
-  { minDegree: 252, maxDegree: 287, value: "Tequila 1 shot" },
-  { minDegree: 288, maxDegree: 323, value: "Take It All In" },
-  { minDegree: 324, maxDegree: 359, value: "Unfortunate, But Happy Christmas" },
+  { minDegree: 0, maxDegree: 35, value: "Image 1" },
+  { minDegree: 36, maxDegree: 71, value: "Image 2" },
+  { minDegree: 72, maxDegree: 107, value: "Image 3" },
+  { minDegree: 108, maxDegree: 143, value: "Image 4" },
+  { minDegree: 144, maxDegree: 179, value: "Image 5" },
+  { minDegree: 180, maxDegree: 215, value: "Image 6" },
+  { minDegree: 216, maxDegree: 251, value: "Image 7" },
+  { minDegree: 252, maxDegree: 287, value: "Image 8" },
+  { minDegree: 288, maxDegree: 323, value: "Image 9" },
+  { minDegree: 324, maxDegree: 359, value: "Image 10" },
 ];
 
 const data = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10];
+
+const images = [
+  "https://i.ibb.co/s9tBrxk/w1.png", // URL หรือ path รูปภาพ
+  "https://i.ibb.co/xgs8NLt/w2.png",
+  "https://i.ibb.co/CHcPzFn/w3.png",
+  "https://i.ibb.co/rHdPpmg/w4.png",
+  "https://i.ibb.co/Tbw85jF/w5.png",
+  "https://i.ibb.co/RhnFg06/w6.png",
+  "https://i.ibb.co/TMZzzS6/w7.png",
+  "https://i.ibb.co/4KwGFLx/w8.png",
+  "https://i.ibb.co/qN5TPkS/w9.png",
+  "https://i.ibb.co/CQvgdTj/w10.png",
+];
 
 const pieColors = [
   "#58694E",
@@ -31,21 +44,9 @@ const pieColors = [
 ];
 
 let myChart = new Chart(wheel, {
-  plugins: [ChartDataLabels],
   type: "pie",
   data: {
-    labels: [
-      "  Classic & Signature Cocktail",
-      "  OnlyFun",
-      "  You did great this year, but Santa still not chose you :(",
-      "  Good Girls Swallow",
-      "  Whiskey 1 shot",
-      "  Money Shot",
-      "  No Luck, Sad :((",
-      "  Tequila 1 shot",
-      "  Take It All In",
-      "  Unfortunate, But Happy Christmas",
-    ],
+    labels: new Array(10).fill(""), // ซ่อนข้อความ
     datasets: [
       {
         backgroundColor: pieColors,
@@ -61,82 +62,35 @@ let myChart = new Chart(wheel, {
       legend: {
         display: false,
       },
-      datalabels: {
-        color: "#ffffff",
-        anchor: "end",
-        align: "start",
-        offset: 20,
-        clip: false,
-        formatter: (value, context) => {
-          let label = context.chart.data.labels[context.dataIndex];
-          let words = label.split(" ");
-          let lines = [];
-          let line = "";
-
-          for (let word of words) {
-            if ((line + word).length <= 25) {
-              line += word + " ";
-            } else {
-              lines.push(line.trim());
-              line = word + " ";
-            }
-          }
-          lines.push(line.trim());
-
-          return lines.join("\n");
-        },
-        font: { size: 13 },
-        textAlign: "center",
-      },
     },
   },
-});
+  plugins: [
+    {
+      beforeDraw: (chart) => {
+        const ctx = chart.ctx;
+        const radius = chart.outerRadius;
 
-const valueGenerator = (angleValue) => {
-  let correctedDegree = 452 - angleValue;
-  correctedDegree = correctedDegree % 360;
+        images.forEach((src, index) => {
+          const img = new Image();
+          img.src = src;
 
-  for (let i of rotationValues) {
-    if (correctedDegree >= i.minDegree && correctedDegree <= i.maxDegree) {
-      finalValue.innerHTML = `<p>${i.value}</p>`;
-      spinBtn.disabled = false;
-      break;
-    }
-  }
-};
+          img.onload = () => {
+            const angle = (chart.getDatasetMeta(0).data[index].startAngle +
+              chart.getDatasetMeta(0).data[index].endAngle) /
+              2;
 
-// ตัวแปรใหม่สำหรับควบคุมสถานะการหมุนและเก็บผลลัพธ์
-let hasSpun = false;
-let lastResult = ""; // สำหรับเก็บผลลัพธ์ล่าสุด
+            const x = chart.chartArea.width / 2 + Math.cos(angle) * (radius / 2);
+            const y = chart.chartArea.height / 2 + Math.sin(angle) * (radius / 2);
 
-let count = 0;
-let resultValue = 101;
-
-spinBtn.addEventListener("click", () => {
-  if (!hasSpun) {
-    hasSpun = true; // อัปเดตสถานะว่าหมุนแล้ว
-    spinBtn.disabled = true; // ปิดการใช้งานปุ่ม
-    finalValue.innerHTML = `<p>Good Luck!</p>`;
-    let randomDegree = Math.floor(Math.random() * 360);
-    let rotationInterval = window.setInterval(() => {
-      myChart.options.rotation = myChart.options.rotation + resultValue;
-      myChart.update();
-      if (myChart.options.rotation >= 360) {
-        count += 1;
-        resultValue -= 5;
-        myChart.options.rotation = 0;
-      } else if (count > 15 && myChart.options.rotation == randomDegree) {
-        valueGenerator(randomDegree);
-        lastResult = finalValue.innerHTML; // บันทึกผลลัพธ์ล่าสุด
-        clearInterval(rotationInterval);
-        count = 0;
-        resultValue = 101;
-      }
-    }, 10);
-  } else {
-    finalValue.innerHTML = `<p>You can spin only once!</p>`; // ข้อความเตือน
-    setTimeout(() => {
-      finalValue.innerHTML = lastResult; // กลับไปแสดงผลลัพธ์เดิมหลัง 2 วินาที
-    }, 2000); // 2000 มิลลิวินาที (2 วินาที)
-  }
+            ctx.save();
+            ctx.beginPath();
+            ctx.arc(x, y, radius / 10, 0, 2 * Math.PI);
+            ctx.clip();
+            ctx.drawImage(img, x - radius / 10, y - radius / 10, radius / 5, radius / 5);
+            ctx.restore();
+          };
+        });
+      },
+    },
+  ],
 });
