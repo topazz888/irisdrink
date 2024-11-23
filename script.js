@@ -12,7 +12,7 @@ const rotationValues = [
   { minDegree: 216, maxDegree: 251, value: "No Luck, Sad :((" },
   { minDegree: 252, maxDegree: 287, value: "Tequila 1 shot" },
   { minDegree: 288, maxDegree: 323, value: "Take It All In" },
-  { minDegree: 324, maxDegree: 359, value: "Unfortunate, But Happy Christmas" },
+  { minDegree: 324, maxDegree: 359, value: " กรอกโค้ด HOHOHO1000 รับส่วนลด 1000 บาท สำหรับการจ้างงานขั้นต่ำ 2000 บาท " },
 ];
 
 const data = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10];
@@ -44,7 +44,7 @@ let myChart = new Chart(wheel, {
       "  No Luck, Sad :((",
       "  Tequila 1 shot",
       "  Take It All In",
-      "  Unfortunate, But Happy Christmas",
+      "  Fastwork Voucher",
     ],
     datasets: [
       {
