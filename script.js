@@ -12,7 +12,7 @@ const rotationValues = [
   { minDegree: 216, maxDegree: 251, value: "No Luck, Sad :((" },
   { minDegree: 252, maxDegree: 287, value: "Tequila 1 shot" },
   { minDegree: 288, maxDegree: 323, value: "Take It All In" },
-  { minDegree: 324, maxDegree: 359, value: " กรอกโค้ด HOHOHO1000 เพื่อรับส่วนลด 1000 บาท\nสำหรับการจ้างงานขั้นต่ำ 2000 บาท " },
+  { minDegree: 324, maxDegree: 359, value: " กรอกโค้ด HOHOHO1000 \nเพื่อรับส่วนลด 1000 บาท\nสำหรับการจ้างงานขั้นต่ำ 2000 บาท " },
 ];
 
 const data = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10];
