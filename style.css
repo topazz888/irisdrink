@@ -95,11 +95,16 @@ img {
     font-size: 12px;
   }
    .container {
-    font-size: 12px; /* ขนาดตัวอักษรสำหรับหน้าจอเล็ก */
+    font-size: 10px; /* ขนาดตัวอักษรสำหรับหน้าจอเล็ก */
   }
 }
 @media screen and (max-width: 480px) {
   .container {
-    font-size: 10px; /* ขนาดตัวอักษรสำหรับหน้าจอที่เล็กที่สุด */
+    font-size: 9px; /* ขนาดตัวอักษรสำหรับหน้าจอที่เล็กที่สุด */
+  }
+}
+@media screen and (max-width: 300px) {
+  .container {
+    font-size: 8px; /* ขนาดตัวอักษรสำหรับหน้าจอที่เล็กที่สุด */
   }
 }
