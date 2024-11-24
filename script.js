@@ -63,8 +63,8 @@ let myChart = new Chart(wheel, {
       },
       datalabels: {
         color: "#ffffff",
-        anchor: "center",
-        align: "center",
+        anchor: "start",
+        align: "start",
         offset: 60,
         clip: true,
         formatter: (value, context) => {
