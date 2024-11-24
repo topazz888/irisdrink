@@ -74,7 +74,7 @@ let myChart = new Chart(wheel, {
           let line = "";
 
           for (let word of words) {
-            if ((line + word).length <= 25) {
+            if ((line + word).length <= 35) {
               line += word + " ";
             } else {
               lines.push(line.trim());
