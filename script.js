@@ -105,17 +105,16 @@ const valueGenerator = (angleValue) => {
   }
 };
 
-// ตัวแปรใหม่สำหรับควบคุมสถานะการหมุนและเก็บผลลัพธ์
 let hasSpun = false;
-let lastResult = ""; // สำหรับเก็บผลลัพธ์ล่าสุด
+let lastResult = "";
 
 let count = 0;
 let resultValue = 101;
 
 spinBtn.addEventListener("click", () => {
   if (!hasSpun) {
-    hasSpun = true; // อัปเดตสถานะว่าหมุนแล้ว
-    spinBtn.disabled = true; // ปิดการใช้งานปุ่ม
+    hasSpun = true;
+    spinBtn.disabled = true;
     finalValue.innerHTML = `<p>Good Luck!</p>`;
     let randomDegree = Math.floor(Math.random() * 360);
     let rotationInterval = window.setInterval(() => {
@@ -126,17 +125,11 @@ spinBtn.addEventListener("click", () => {
         resultValue -= 5;
         myChart.options.rotation = 0;
       } else if (count > 15 && myChart.options.rotation == randomDegree) {
-        valueGenerator(randomDegree);
-        lastResult = finalValue.innerHTML; // บันทึกผลลัพธ์ล่าสุด
         clearInterval(rotationInterval);
+        valueGenerator(randomDegree);
         count = 0;
         resultValue = 101;
       }
     }, 10);
-  } else {
-    finalValue.innerHTML = `<p>You can spin only once!</p>`; // ข้อความเตือน
-    setTimeout(() => {
-      finalValue.innerHTML = lastResult; // กลับไปแสดงผลลัพธ์เดิมหลัง 2 วินาที
-    }, 2000); // 2000 มิลลิวินาที (2 วินาที)
   }
 });
