@@ -41,6 +41,9 @@ body {
   overflow: hidden;
   padding: 2em;
   font-size: 14px;
+  display: grid;
+  place-items: center; /* จัดทั้งแนวตั้งและแนวนอน */
+  height: 100%;
   
 }
 
