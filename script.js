@@ -64,7 +64,7 @@ let myChart = new Chart(wheel, {
       datalabels: {
         color: "#ffffff",
         anchor: "start",
-        align: "center",
+        align: "end",
         offset: 20,
         clip: false,
         formatter: (value, context) => {
@@ -85,8 +85,8 @@ let myChart = new Chart(wheel, {
 
           return lines.join("\n");
         },
-        font: { size: 13 },
-        textAlign: "start",
+        font: { size: 14 },
+        textAlign: "center",
       },
     },
   },
