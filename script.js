@@ -56,24 +56,24 @@ let myChart = new Chart(wheel, {
   options: {
     responsive: true,
     animation: { duration: 0 },
-    
     plugins: {
-  tooltip: false,
-  legend: {
-    display: false,
-  },
-  datalabels: {
-    color: "#ffffff",
-    anchor: "center",
-    align: "center",
-    offset: 0,
-    rotation: (context) => {
+      tooltip: false,
+      legend: {
+        display: false,
+      },
+      datalabels: {
+        color: "#ffffff",
+        anchor: "end",
+        align: "start",
+        offset: 20,
+        clip: false,
+        rotation: (context) => {
       // คำนวณการหมุนของข้อความให้ตรงกับแต่ละ slice
       let count = context.chart.data.labels.length;
       let angle = 360 / count;
       return context.dataIndex * angle - angle / 2;
     },
-    formatter: (value, context) => {
+        formatter: (value, context) => {
       // จัดการข้อความให้แสดงผลหลายบรรทัด (ตัดคำตามความเหมาะสม)
       let label = context.chart.data.labels[context.dataIndex];
       let words = label.split(" ");
@@ -88,13 +88,13 @@ let myChart = new Chart(wheel, {
           line = word + " ";
         }
       }
-      lines.push(line.trim());
+         lines.push(line.trim());
       return lines.join("\n");
+        },
+        font: { size: 12 },
+        textAlign: "center",
+      },
     },
-    font: { size: 12 },
-    textAlign: "center",
-  },
-  },
   },
 });
 
