@@ -43,6 +43,7 @@ body {
   display: flex;
   justify-content: center;
   aligh-items: flex-end;
+  font-size: 14px;
   
 }
 #wheel {
@@ -91,5 +92,13 @@ img {
 @media screen and (max-width: 768px) {
   .wrapper {
     font-size: 12px;
+  }
+   .container {
+    font-size: 12px; /* ขนาดตัวอักษรสำหรับหน้าจอเล็ก */
+  }
+}
+@media screen and (max-width: 480px) {
+  .container {
+    font-size: 10px; /* ขนาดตัวอักษรสำหรับหน้าจอที่เล็กที่สุด */
   }
 }
