@@ -65,30 +65,36 @@ let myChart = new Chart(wheel, {
         color: "#ffffff",
         anchor: "end",
         align: "start",
-        offset: 20,
-        clip: false,
-        formatter: (value, context) => {
-          let label = context.chart.data.labels[context.dataIndex];
-          let words = label.split(" ");
-          let lines = [];
-          let line = "";
-
-          for (let word of words) {
-            if ((line + word).length <= 25) {
-              line += word + " ";
-            } else {
-              lines.push(line.trim());
-              line = word + " ";
-            }
-          }
-          lines.push(line.trim());
-
-          return lines.join("\n");
-        },
-        font: { size: 13 },
-        textAlign: "center",
-      },
+        offset: 10,
+        clip: true,
+        rotation: (context) => {
+      // คำนวณการหมุนของข้อความให้ตรงกับแต่ละ slice
+      let count = context.chart.data.labels.length;
+      let angle = 360 / count;
+      return context.dataIndex * angle - angle / 2;
     },
+    formatter: (value, context) => {
+      // จัดการข้อความให้แสดงผลหลายบรรทัด (ตัดคำตามความเหมาะสม)
+      let label = context.chart.data.labels[context.dataIndex];
+      let words = label.split(" ");
+      let lines = [];
+      let line = "";
+
+      for (let word of words) {
+        if ((line + word).length <= 20) {
+          line += word + " ";
+        } else {
+          lines.push(line.trim());
+          line = word + " ";
+        }
+      }
+      lines.push(line.trim());
+      return lines.join("\n");
+    },
+    font: { size: 12 },
+    textAlign: "center",
+  },
+},
   },
 });
 
