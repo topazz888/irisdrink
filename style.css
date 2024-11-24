@@ -40,9 +40,6 @@ body {
   height: 100%;
   overflow: hidden;
   padding: 1rem;
-  display: flex;
-  justify-content: center;
-  align-item: flex-start;
   
 }
 #wheel {
