@@ -65,7 +65,7 @@ let myChart = new Chart(wheel, {
         color: "#ffffff",
         anchor: "start",
         align: "end",
-        offset: 20,
+        offset: 50,
         clip: false,
         formatter: (value, context) => {
           let label = context.chart.data.labels[context.dataIndex];
