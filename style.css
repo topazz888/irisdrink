@@ -53,11 +53,7 @@ body {
   padding: 0;
   overflow: hidden;
 }
-@keyframes rotate {
-  100% {
-    transform: rotate(360deg);
-  }
-}
+
 #spin-btn {
   position: absolute;
   transform: translate(-50%, -50%);
