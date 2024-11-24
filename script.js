@@ -56,6 +56,7 @@ let myChart = new Chart(wheel, {
   options: {
     responsive: true,
     animation: { duration: 0 },
+    
     plugins: {
   tooltip: false,
   legend: {
@@ -93,7 +94,7 @@ let myChart = new Chart(wheel, {
     font: { size: 12 },
     textAlign: "center",
   },
-},
+  },
   },
 });
 
