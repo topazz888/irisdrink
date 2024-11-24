@@ -63,10 +63,10 @@ let myChart = new Chart(wheel, {
       },
       datalabels: {
         color: "#ffffff",
-        anchor: "start",
+        anchor: "center",
         align: "end",
-        offset: 50,
-        clip: false,
+        offset: 20,
+        clip: true,
         formatter: (value, context) => {
           let label = context.chart.data.labels[context.dataIndex];
           let words = label.split(" ");
