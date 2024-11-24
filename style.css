@@ -41,11 +41,9 @@ body {
   overflow: hidden;
   padding: 2em;
   font-size: 14px;
-  display: grid;
-  place-items: center; /* จัดทั้งแนวตั้งและแนวนอน */
-  height: 100%;
-  text-align: left;
-  
+  display: flex;
+  justify-content: flex-start; /* จัดตำแหน่งข้อความไปทางซ้าย */
+  align-items: center;
 }
 
 #wheel {
@@ -54,7 +52,9 @@ body {
   top: 10;
   padding: 0;
   overflow: hidden;
+
 }
+
 @keyframes rotate {
   100% {
     transform: rotate(360deg);
