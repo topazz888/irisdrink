@@ -41,7 +41,7 @@ body {
   overflow: hidden;
   padding: 2rem;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   aligh-items: flex-start;
   font-size: 14px;
   
