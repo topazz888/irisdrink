@@ -42,6 +42,7 @@ body {
   padding: 2rem;
   display: flex;
   justify-content: center;
+  aligh-items: flex-end;
   
 }
 #wheel {
