@@ -70,27 +70,27 @@ let myChart = new Chart(wheel, {
     // กำหนด offset เฉพาะบางอัน
     switch (context.dataIndex) {
       case 0: // Classic & Signature Cocktail
-        return 250;
+        return 350;
       case 1: // Classic & Signature Cocktail
-        return 300;
+        return 400;
       case 2: // Classic & Signature Cocktail
-        return 250;
+        return 350;
       case 3: // Classic & Signature Cocktail
-        return 300;
+        return 400;
       case 4: // Whiskey 1 shot
-        return 250;
+        return 350;
       case 5: // Classic & Signature Cocktail
-        return 300;
+        return 400;
       case 6: // Classic & Signature Cocktail
-        return 250;
+        return 350;
       case 7: // Classic & Signature Cocktail
-        return 300;
+        return 400;
       case 8: // Classic & Signature Cocktail
-        return 250;
+        return 350;
       case 9: // Fastwork Voucher
-        return 300;
+        return 400;
       default:
-        return 30; // ค่าปกติสำหรับอันอื่น
+        return 330; // ค่าปกติสำหรับอันอื่น
     }
   },
         formatter: (value, context) => {
