@@ -72,23 +72,23 @@ let myChart = new Chart(wheel, {
       case 0: // Classic & Signature Cocktail
         return 100;
       case 1: // Classic & Signature Cocktail
-        return 200;
+        return 150;
       case 2: // Classic & Signature Cocktail
         return 100;
       case 3: // Classic & Signature Cocktail
-        return 200;
+        return 150;
       case 4: // Whiskey 1 shot
         return 100;
       case 5: // Classic & Signature Cocktail
-        return 200;
+        return 150;
       case 6: // Classic & Signature Cocktail
         return 100;
       case 7: // Classic & Signature Cocktail
-        return 200;
+        return 150;
       case 8: // Classic & Signature Cocktail
         return 100;
       case 9: // Fastwork Voucher
-        return 200;
+        return 150;
 
     }
   },
