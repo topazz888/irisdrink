@@ -72,27 +72,53 @@ let myChart = new Chart(wheel, {
       case 0: // Classic & Signature Cocktail
         return 100;
       case 1: // Classic & Signature Cocktail
-        return 150;
+        return 200;
       case 2: // Classic & Signature Cocktail
-        return 100;
+        return 200;
       case 3: // Classic & Signature Cocktail
         return 150;
       case 4: // Whiskey 1 shot
-        return 100;
+        return 200;
       case 5: // Classic & Signature Cocktail
         return 150;
       case 6: // Classic & Signature Cocktail
-        return 100;
+        return 200;
       case 7: // Classic & Signature Cocktail
         return 150;
       case 8: // Classic & Signature Cocktail
-        return 100;
+        return 200;
       case 9: // Fastwork Voucher
         return 150;
 
     }
   },
-       
+       rotation: (context) => {
+    // กำหนด rotation เฉพาะแต่ละส่วน
+    switch (context.dataIndex) {
+      case 0: // Classic & Signature Cocktail
+        return 0; // ไม่หมุน
+      case 1: // OnlyFun
+        return 45; // หมุน 45 องศา
+      case 2: // You did great this year...
+        return 90; // หมุน 90 องศา
+      case 3: // Good Girls Swallow
+        return 135; // หมุน 135 องศา
+      case 4: // Whiskey 1 shot
+        return 180; // หมุน 180 องศา
+      case 5: // Money Shot
+        return 225; // หมุน 225 องศา
+      case 6: // No Luck, Sad
+        return 270; // หมุน 270 องศา
+      case 7: // Tequila 1 shot
+        return 315; // หมุน 315 องศา
+      case 8: // Take It All In
+        return 360; // กลับมาที่ 0 องศา
+      case 9: // Fastwork Voucher
+        return -45; // หมุน -45 องศา (ทวนเข็ม)
+      default:
+        return 0;
+    }
+  },
         formatter: (value, context) => {
           let label = context.chart.data.labels[context.dataIndex];
           let words = label.split(" ");
