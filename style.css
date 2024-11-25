@@ -45,7 +45,7 @@ body {
   max-height: inherit;
   width: inherit;
   top: 10;
-  padding: 2;
+  padding: 1em;
   overflow: hidden;
 }
 @keyframes rotate {
