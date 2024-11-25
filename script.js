@@ -65,7 +65,6 @@ let myChart = new Chart(wheel, {
         color: "#ffffff",
         anchor: "start",
         align: "start",
-        offset: 150,
         clip: true,
         formatter: (value, context) => {
           let label = context.chart.data.labels[context.dataIndex];
@@ -81,6 +80,19 @@ let myChart = new Chart(wheel, {
               line = word + " ";
             }
           }
+          offset: (context) => {
+    // กำหนด offset เฉพาะบางอัน
+    switch (context.dataIndex) {
+      case 0: // Classic & Signature Cocktail
+        return 50;
+      case 4: // Whiskey 1 shot
+        return 80;
+      case 9: // Fastwork Voucher
+        return 100;
+      default:
+        return 30; // ค่าปกติสำหรับอันอื่น
+    }
+  },
           lines.push(line.trim());
 
           return lines.join("\n");
