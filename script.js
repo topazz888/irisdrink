@@ -70,7 +70,7 @@ let myChart = new Chart(wheel, {
     // กำหนด offset เฉพาะบางอัน
     switch (context.dataIndex) {
       case 0: // Classic & Signature Cocktail
-        return 130;
+        return 100;
       case 1: // Classic & Signature Cocktail
         return 150;
       case 2: // Classic & Signature Cocktail
@@ -78,7 +78,7 @@ let myChart = new Chart(wheel, {
       case 3: // Classic & Signature Cocktail
         return 150;
       case 4: // Whiskey 1 shot
-        return 130;
+        return 170;
       case 5: // Classic & Signature Cocktail
         return 150;
       case 6: // Classic & Signature Cocktail
