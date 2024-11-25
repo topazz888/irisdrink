@@ -88,7 +88,7 @@ let myChart = new Chart(wheel, {
       case 8: // Classic & Signature Cocktail
         return 130;
       case 9: // Fastwork Voucher
-        return 150;
+        return 180;
 
     }
   },
