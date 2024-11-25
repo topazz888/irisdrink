@@ -87,7 +87,7 @@ let myChart = new Chart(wheel, {
         },
         font: { size: 14 },
         textAlign: "center",
-        rotation: 90,
+        rotation: 45,
       },
     },
   },
