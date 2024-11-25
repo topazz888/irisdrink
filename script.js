@@ -65,7 +65,7 @@ let myChart = new Chart(wheel, {
         color: "#ffffff",
         anchor: "start",
         align: "start",
-        padding: { top: 10, bottom: 10, left: 20, right: 20 }, // ระยะรอบข้อความ
+        padding: { top: 10, bottom: 10, left: 20, right: 10 }, // ระยะรอบข้อความ
        offset: (context) => {
       const chart = context.chart;
       const outerRadius = chart.outerRadius || chart.width / 2; // ขอบวงล้อ
