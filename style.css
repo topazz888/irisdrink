@@ -89,3 +89,13 @@ img {
     font-size: 12px;
   }
 }
+@media screen and (max-width: 480px) {
+  .container {
+    font-size: 8px; /* ขนาดตัวอักษรสำหรับหน้าจอที่เล็กที่สุด */
+  }
+}
+@media screen and (max-width: 300px) {
+  .container {
+    font-size: 6px; /* ขนาดตัวอักษรสำหรับหน้าจอที่เล็กที่สุด */
+  }
+}
