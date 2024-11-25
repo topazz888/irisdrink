@@ -96,27 +96,27 @@ let myChart = new Chart(wheel, {
     // กำหนด rotation เฉพาะแต่ละส่วน
     switch (context.dataIndex) {
       case 0: // Classic & Signature Cocktail
-        return 90; // ไม่หมุน
+        return 60; // ไม่หมุน
       case 1: // OnlyFun
         return 0; // หมุน 45 องศา
       case 2: // You did great this year...
-        return 90; // หมุน 90 องศา
+        return 60; // หมุน 90 องศา
       case 3: // Good Girls Swallow
         return 0; // หมุน 135 องศา
       case 4: // Whiskey 1 shot
-        return 90; // หมุน 180 องศา
+        return 60; // หมุน 180 องศา
       case 5: // Money Shot
         return 0; // หมุน 225 องศา
       case 6: // No Luck, Sad
-        return 90; // หมุน 270 องศา
+        return 60; // หมุน 270 องศา
       case 7: // Tequila 1 shot
         return 0; // หมุน 315 องศา
       case 8: // Take It All In
-        return 90; // กลับมาที่ 0 องศา
+        return 60; // กลับมาที่ 0 องศา
       case 9: // Fastwork Voucher
         return 0; // หมุน -45 องศา (ทวนเข็ม)
       default:
-        return 90;
+        return 60;
     }
   },
         formatter: (value, context) => {
