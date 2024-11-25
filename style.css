@@ -30,7 +30,7 @@ body {
   transform: translate(-50%, -50%);
   top: 60%;
   left: 50%;
-  padding: 3em;
+  padding: 2em;
   border-radius: 1em;
   box-shadow: 0 4em 5em rgba(27, 8, 53, 0.2);
 }
@@ -74,7 +74,7 @@ img {
   position: absolute;
   width: 4em;
   top: 50%;
-  right: -30%;
+  right: -10%;
  
 }
 #final-value {
@@ -85,16 +85,13 @@ img {
   font-weight: 500;
 }
 @media screen and (max-width: 1600px) {
-  .wrapper {
-    font-size: 16px;
-  }
    .container {
     font-size: 12px; /* ขนาดตัวอักษรสำหรับหน้าจอเล็ก */
   }
 }
 @media screen and (max-width: 768px) {
-  .wrapper {
-    font-size: 12px;
+  .container {
+    font-size: 10px; /* ขนาดตัวอักษรสำหรับหน้าจอที่เล็กที่สุด */
   }
 }
 @media screen and (max-width: 480px) {
