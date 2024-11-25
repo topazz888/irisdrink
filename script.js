@@ -73,18 +73,6 @@ let myChart = new Chart(wheel, {
       return outerRadius - 100; // เพิ่มระยะจากขอบวงล้อ (เช่น 10px)
     },
         
-        offset: (context) => {
-    switch (context.dataIndex) {
-      case 0:
-        return 30;
-      case 2:
-        return 30;
-      case 9:
-        return 30;
-      default:
-        return 0;
-    }
-  },
         
         formatter: (value, context) => {
           let label = context.chart.data.labels[context.dataIndex];
