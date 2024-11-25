@@ -74,7 +74,7 @@ let myChart = new Chart(wheel, {
       case 1: // Classic & Signature Cocktail
         return 150;
       case 2: // Classic & Signature Cocktail
-        return 100;
+        return 170;
       case 3: // Classic & Signature Cocktail
         return 150;
       case 4: // Whiskey 1 shot
