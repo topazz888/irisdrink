@@ -66,33 +66,12 @@ let myChart = new Chart(wheel, {
         anchor: "start",
         align: "start",
         clip: true,
-        offset: (context) => {
-    // กำหนด offset เฉพาะบางอัน
-    switch (context.dataIndex) {
-      case 0: // Classic & Signature Cocktail
-        return 170;
-      case 1: // Classic & Signature Cocktail
-        return 220;
-      case 2: // Classic & Signature Cocktail
-        return 170;
-      case 3: // Classic & Signature Cocktail
-        return 220;
-      case 4: // Whiskey 1 shot
-        return 170;
-      case 5: // Classic & Signature Cocktail
-        return 220;
-      case 6: // Classic & Signature Cocktail
-        return 120;
-      case 7: // Classic & Signature Cocktail
-        return 170;
-      case 8: // Classic & Signature Cocktail
-        return 200;
-      case 9: // Fastwork Voucher
-        return 180;
-
-    }
-  },
-      
+       offset: (context) => {
+      const chart = context.chart;
+      const outerRadius = chart.outerRadius || chart.width / 2; // ขอบวงล้อ
+      return outerRadius + 10; // เพิ่มระยะจากขอบวงล้อ (เช่น 10px)
+    },
+    clip: false,
         formatter: (value, context) => {
           let label = context.chart.data.labels[context.dataIndex];
           let words = label.split(" ");
