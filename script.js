@@ -96,7 +96,7 @@ let myChart = new Chart(wheel, {
     // กำหนด rotation เฉพาะแต่ละส่วน
     switch (context.dataIndex) {
       case 0: // Classic & Signature Cocktail
-        return 0; // ไม่หมุน
+        return -45; // ไม่หมุน
       case 1: // OnlyFun
         return 45; // หมุน 45 องศา
       case 2: // You did great this year...
