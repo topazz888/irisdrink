@@ -48,7 +48,6 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh; /* ให้วงล้ออยู่กลางหน้าจอ */
-  
   top: 10;
   padding: 1em;
   overflow: hidden;
@@ -83,6 +82,7 @@ img {
   justify-content: center;
   align-items: center;
   height: 100vh; /* ให้วงล้ออยู่กลางหน้าจอ */
+   left: 80%;
 }
 #final-value {
   font-size: 1.5em;
