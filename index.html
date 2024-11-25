@@ -1,34 +1,33 @@
+
 <html lang="en">
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spin Wheel App</title>
-    <!-- Google Font -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-     <div class="header">
-        <img src="https://i.ibb.co/cFZY7c9/luck2.png" alt="Header Image" class="header-image">
-    </div>
-    <div class="wrapper">
-      <div class="container">
-        <canvas id="wheel"></canvas>
-        <button id="spin-btn">Spin</button>
-        <img src="https://i.ibb.co/r5YtHC0/luck44.png" alt="spinner arrow" />
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>Spin Wheel</title>
+</head>
+<body>
+  <!-- Header Image -->
+	<div class="header">
+		<img src="https://i.ibb.co/cFZY7c9/luck2.png" alt="Header Image" class="header-image">
+	</div>
+
+  
+	<button id="spin">Spin</button>
+	<span class="arrow"></span>
+<div class="container">
+	<div class="one"><span>Classic & Signature Cocktail</span></div>
+  <div class="two"><span>OnlyFun</span></div>
+  <div class="three"><span>You did great this year, but Santa still not chose you</span></div>
+  <div class="four"><span>Good Girls Swallow</span></div>
+  <div class="five"><span>Whiskey 1 shot</span></div>
+  <div class="six"><span>Money Shot</span></div>
+  <div class="seven"><span>No Luck, Sad :((</span></div>
+  <div class="eight"><span>Tequila 1 shot</span></div>
+  <div class="nine"><span>Take It All In</span></div>
+  <div class="ten"><span>Fastwork Voucher</span></div>
+ 
       </div>
-      <div id="final-value">
-        <p>Click On The Spin Button To Start</p>
-      </div>
-    </div>
-    <!-- Chart JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
-    <!-- Chart JS Plugin for displaying text over chart -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.1.0/chartjs-plugin-datalabels.min.js"></script>
-    <!-- Script -->
-    <script src="script.js"></script>
-  </body>
+</div>
+</body>
 </html>
