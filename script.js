@@ -71,10 +71,22 @@ let myChart = new Chart(wheel, {
     switch (context.dataIndex) {
       case 0: // Classic & Signature Cocktail
         return 50;
+      case 1: // Classic & Signature Cocktail
+        return 100;
       case 2: // Classic & Signature Cocktail
         return 50;
+      case 3: // Classic & Signature Cocktail
+        return 100;
       case 4: // Whiskey 1 shot
-        return 80;
+        return 50;
+      case 5: // Classic & Signature Cocktail
+        return 100;
+      case 6: // Classic & Signature Cocktail
+        return 50;
+      case 7: // Classic & Signature Cocktail
+        return 100;
+      case 8: // Classic & Signature Cocktail
+        return 50;
       case 9: // Fastwork Voucher
         return 100;
       default:
