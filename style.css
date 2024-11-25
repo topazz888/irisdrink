@@ -44,12 +44,10 @@ body {
 }
 
 #wheel {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh; /* ให้วงล้ออยู่กลางหน้าจอ */
+  max-height: inherit;
+  width: inherit;
   top: 10;
-  padding: 1em;
+  padding: 0;
   overflow: hidden;
   left: 50%;
 
