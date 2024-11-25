@@ -79,11 +79,10 @@ body {
   font-weight: 600;
 }
 img {
-  position: absolute;
-  width: 4em;
-  top: 50%;
-  right: -10%;
- 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* ให้วงล้ออยู่กลางหน้าจอ */
 }
 #final-value {
   font-size: 1.5em;
