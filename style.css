@@ -22,8 +22,8 @@ body {
 }
 .wrapper {
   width: 100%;
-  max-width: 34.37em;
-  max-height: 90vh;
+  max-width: 100vh;
+  max-height: 100vh;
   overflow: hidden;
   background-color: #54060E;
   position: absolute;
