@@ -65,13 +65,14 @@ let myChart = new Chart(wheel, {
         color: "#ffffff",
         anchor: "start",
         align: "start",
-        clip: true,
+        padding: { top: 10, bottom: 10, left: 20, right: 20 }, // ระยะรอบข้อความ
        offset: (context) => {
       const chart = context.chart;
       const outerRadius = chart.outerRadius || chart.width / 2; // ขอบวงล้อ
-      return outerRadius - 30; // เพิ่มระยะจากขอบวงล้อ (เช่น 10px)
+      return outerRadius - 50; // เพิ่มระยะจากขอบวงล้อ (เช่น 10px)
     },
     clip: false,
+        
         formatter: (value, context) => {
           let label = context.chart.data.labels[context.dataIndex];
           let words = label.split(" ");
