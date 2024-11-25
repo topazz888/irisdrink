@@ -69,7 +69,7 @@ let myChart = new Chart(wheel, {
        offset: (context) => {
       const chart = context.chart;
       const outerRadius = chart.outerRadius || chart.width / 2; // ขอบวงล้อ
-      return outerRadius - 150; // เพิ่มระยะจากขอบวงล้อ (เช่น 10px)
+      return outerRadius - 120; // เพิ่มระยะจากขอบวงล้อ (เช่น 10px)
     },
     clip: false,
         
