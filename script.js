@@ -90,8 +90,7 @@ let myChart = new Chart(wheel, {
       case 9: // Fastwork Voucher
         return 150;
       default:
-        retur
-          n 100; // ค่าปกติสำหรับอันอื่น
+        return 150;
     }
   },
        
