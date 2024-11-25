@@ -85,6 +85,8 @@ let myChart = new Chart(wheel, {
     switch (context.dataIndex) {
       case 0: // Classic & Signature Cocktail
         return 50;
+      case 2: // Classic & Signature Cocktail
+        return 50;
       case 4: // Whiskey 1 shot
         return 80;
       case 9: // Fastwork Voucher
