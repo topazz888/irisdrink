@@ -66,21 +66,7 @@ let myChart = new Chart(wheel, {
         anchor: "start",
         align: "start",
         clip: true,
-        formatter: (value, context) => {
-          let label = context.chart.data.labels[context.dataIndex];
-          let words = label.split(" ");
-          let lines = [];
-          let line = "";
-
-          for (let word of words) {
-            if ((line + word).length <= 35) {
-              line += word + " ";
-            } else {
-              lines.push(line.trim());
-              line = word + " ";
-            }
-          }
-          offset: (context) => {
+        offset: (context) => {
     // กำหนด offset เฉพาะบางอัน
     switch (context.dataIndex) {
       case 0: // Classic & Signature Cocktail
@@ -95,6 +81,21 @@ let myChart = new Chart(wheel, {
         return 30; // ค่าปกติสำหรับอันอื่น
     }
   },
+        formatter: (value, context) => {
+          let label = context.chart.data.labels[context.dataIndex];
+          let words = label.split(" ");
+          let lines = [];
+          let line = "";
+
+          for (let word of words) {
+            if ((line + word).length <= 35) {
+              line += word + " ";
+            } else {
+              lines.push(line.trim());
+              line = word + " ";
+            }
+          }
+          
           lines.push(line.trim());
 
           return lines.join("\n");
