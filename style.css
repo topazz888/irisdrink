@@ -41,9 +41,6 @@ body {
   overflow: hidden;
   padding: 2em;
   font-size: 14px;
-  display: flex;
-  justify-content: flex-start; /* จัดตำแหน่งข้อความไปทางซ้าย */
-  align-items: center;
 }
 
 #wheel {
