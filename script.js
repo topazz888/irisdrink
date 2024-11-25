@@ -89,8 +89,7 @@ let myChart = new Chart(wheel, {
         return 100;
       case 9: // Fastwork Voucher
         return 150;
-      default:
-        return 150;
+
     }
   },
        
