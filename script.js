@@ -70,25 +70,25 @@ let myChart = new Chart(wheel, {
     // กำหนด offset เฉพาะบางอัน
     switch (context.dataIndex) {
       case 0: // Classic & Signature Cocktail
-        return 70;
+        return 170;
       case 1: // Classic & Signature Cocktail
-        return 120;
+        return 220;
       case 2: // Classic & Signature Cocktail
-        return 70;
+        return 170;
       case 3: // Classic & Signature Cocktail
-        return 120;
+        return 220;
       case 4: // Whiskey 1 shot
-        return 70;
+        return 170;
       case 5: // Classic & Signature Cocktail
-        return 120;
+        return 220;
       case 6: // Classic & Signature Cocktail
-        return 20;
+        return 120;
       case 7: // Classic & Signature Cocktail
-        return 70;
+        return 170;
       case 8: // Classic & Signature Cocktail
-        return 100;
+        return 200;
       case 9: // Fastwork Voucher
-        return 80;
+        return 180;
 
     }
   },
