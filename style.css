@@ -1,106 +1,135 @@
-* {
-  padding: 1;
-  margin: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-}
-body {
-  height: 100vh;
-  background: linear-gradient(-90deg, #0D2501, #0D2501);
+*{
+	box-sizing:border-box;
 }
 
+body{
+	margin:0;
+	padding:0;
+	background-color: #0D2501;
+	display:flex;
+	align-items:center;
+	justify-content: center;
+	height:100vh;
+	overflow:hidden;
+}
+/* Header styling */
+.header {
+  width: 100%;
+  max-width: 600px;
+  margin: 20px auto;
+  padding-top: 20px; /* Space for header */
+}
 
 .header-image {
-  position: relative;
-    width: 100%;
-    max-width: 600px;
-  transform: translate(-50%, 3%);
-  top: 0%;    
-  left: 50%;
-  padding: 2em;
-   margin-bottom: 20px;
-}
-.wrapper {
-  width: 90%;
-  max-width: 34.37em;
-  max-height: 90vh;
-  overflow: hidden;
-  background-color: #54060E;
-  position: absolute;
-  transform: translate(-50%, -50%);
-  top: 60%;
-  left: 50%;
-  padding: 2em;
-  border-radius: 1em;
-  box-shadow: 0 4em 5em rgba(27, 8, 53, 0.2);
-}
-.container {
-  position: relative;
   width: 100%;
-  height: 100%;
-  overflow: hidden;
-  
+  height: auto;
 }
-#wheel {
-  max-height: inherit;
-  width: inherit;
-  top: 10;
-  padding: 1em;
-  overflow: hidden;
+.container{
+	width:500px;
+	height:500px;
+	background-color: #ccc;
+	border-radius:50%;
+	border:15px solid #dde;
+	position: relative;
+	overflow: hidden;
+	transition: 5s;
 }
-@keyframes rotate {
-  100% {
-    transform: rotate(360deg);
-  }
+
+.container div{
+	height:50%;
+	width:200px;
+	position: absolute;
+	clip-path: polygon(100% 0 , 50% 100% , 0 0 );
+	transform:translateX(-50%);
+	transform-origin:bottom;
+	text-align:center;
+	display:flex;
+	align-items: center;
+	justify-content: center;
+	font-size:14px;
+	font-weight:bold;
+	font-family:sans-serif;
+	color:#fff;
+	left:135px;
 }
-#spin-btn {
-  position: absolute;
-  transform: translate(-50%, -50%);
-  top: 50%;
-  left: 50%;
-  height: 26%;
-  width: 26%;
-  border-radius: 50%;
-  cursor: pointer;
-  border: 0;
-  background: radial-gradient(#21203C 50%, #4262BC 85%);
-  color: #ffffff;
-  text-transform: uppercase;
-  font-size: 1.8em;
-  letter-spacing: 0.1em;
-  font-weight: 600;
+.container div span {
+  display: inline-block;
+  transform: rotate(90deg); /* Rotate only the text */
+  transform-origin: center; /* Set the rotation pivot to the center of the text */
+  white-space: nowrap; /* Prevent text wrapping */
+  text-align: center; /* Ensure proper text alignment */
 }
-img {
-  position: absolute;
-  width: 4em;
-  top: 50%;
-  right: -10%;
- 
+.container .one {
+      background-color: #58694E;
+      left: 50%;
+    }
+    .container .two {
+      background-color: #0D2501;
+      transform: rotate(36deg);
+    }
+    .container .three {
+      background-color: #58694E;
+      transform: rotate(72deg);
+    }
+    .container .four {
+      background-color: #0D2501;
+      transform: rotate(108deg);
+    }
+    .container .five {
+      background-color: #58694E;
+      transform: rotate(144deg);
+    }
+    .container .six {
+      background-color: #0D2501;
+      transform: rotate(180deg);
+    }
+    .container .seven {
+      background-color: #58694E;
+      transform: rotate(216deg);
+    }
+    .container .eight {
+      background-color: #0D2501;
+      transform: rotate(252deg);
+    }
+    .container .nine {
+      background-color: #58694E;
+      transform: rotate(288deg);
+    }
+    .container .ten {
+      background-color: #0D2501;
+      transform: rotate(324deg);
+    }
+
+.arrow{
+	position: absolute;
+	top:100px;
+	left:50%;
+	transform: translateX(-50%);
+	color:#fff;
 }
-#final-value {
-  font-size: 1.5em;
-  text-align: center;
-  margin-top: 1.5em;
-  color: #FFFFFF;
-  font-weight: 500;
+
+.arrow::before{
+	content:"\1F817";
+	font-size:50px;
 }
-@media screen and (max-width: 1600px) {
-   .container {
-    font-size: 12px; /* ขนาดตัวอักษรสำหรับหน้าจอเล็ก */
-  }
-}
-@media screen and (max-width: 768px) {
-  .container {
-    font-size: 10px; /* ขนาดตัวอักษรสำหรับหน้าจอที่เล็กที่สุด */
-  }
-}
-@media screen and (max-width: 480px) {
-  .container {
-    font-size: 8px; /* ขนาดตัวอักษรสำหรับหน้าจอที่เล็กที่สุด */
-  }
-}
-@media screen and (max-width: 300px) {
-  .container {
-    font-size: 6px; /* ขนาดตัวอักษรสำหรับหน้าจอที่เล็กที่สุด */
-  }
+
+#spin{
+	position: absolute;
+	top:50%;
+	left:50%;
+	transform:translate(-50%,-50%);
+	z-index:10;
+	background-color: #e2e2e2;
+	text-transform: uppercase;
+	border:8px solid #fff;
+	font-weight:bold;
+	font-size:20px;
+	color:#a2a2a2;
+	width: 80px;
+	height:80px;
+	font-family: sans-serif;
+	border-radius:50%;
+	cursor: pointer;
+	outline:none;
+	letter-spacing: 1px;
 }
